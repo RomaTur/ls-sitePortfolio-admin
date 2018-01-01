@@ -1,0 +1,35 @@
+.skill
+    &__item
+        position: relative
+        padding: 5px 10px
+        display: flex
+        align-items: center
+        width: 200px
+        font-family: 'roboto', monospace
+        font-size: 16px
+        font-weight: 500
+        color: $color-night
+    &__name
+        flex: 1 1 auto
+    &__input
+        width: 50px
+        padding: 5px 10px
+        border-radius: 5px
+        border: 1px solid transparent
+        margin: 0 10px
+        text-align: center
+        color: $color-night
+        font-family: 'roboto', monospace
+        font-weight: 500
+        &:focus
+            border: 1 px solid $color-aqua
+    &__remove
+        cursor: pointer
+        position: absolute
+        top: 50%
+        left: -5%
+        transform: translate(-50%, -50%)
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        background: red
