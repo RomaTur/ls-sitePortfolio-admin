@@ -36,7 +36,6 @@ export default {
       this.skills = this.skills.filter(function(skills) { return skills.id !== skillId })
     },
     addSkill(newSkill) {
-      console.log(newSkill)
       this.skills.push(newSkill)
     },
     changePercents(newPercent, skillId) {

@@ -14,15 +14,19 @@
 <script>
 export default {
   data: () => ({
-    articles: [
-      {
-        id: 1,
-        title: 'Статья',
-        date: '31.12.17',
-        text: 'Пусть все будет классно в новом году'
-      }
-    ]
+    articles: []
   }),
+  created() {
+    fetch('/src/components/Blog/data.json')
+      .then(response => {
+        return response.json()
+      }, response => {
+        console.error(response)
+      })
+      .then(data => {
+        this.articles = data
+      })
+  },
   methods: {
     addArticle(article) {
       this.articles.push(article)

@@ -1,4 +1,4 @@
-.article
+.work
   width: 400px
   display: flex
   flex-direction: column
@@ -26,8 +26,6 @@
       background: fade-out($color-black, 0.1)
       z-index: 11
     &-container
-      width: 600px
-      height: 80vh
       background: darken($color-white, 20%)
       @extend %absolute-center
       position: fixed
@@ -35,13 +33,15 @@
       border-radius: 5px
       border: 1px solid transparent
       display: flex
-      flex-direction: column
       z-index: 12
-    &-head
+    &-column
       display: flex
-      justify-content: center
-      margin-bottom: 10px
-    &-title,&-date,&-text
+      flex-direction: column
+      margin-right: 10px
+      width: 300px
+      &:last-child
+        margin-right: 0
+    &-title,&-date, &-href
       padding: 10px 15px
       font-family: 'roboto', monospace
       font-size: 16px
@@ -49,16 +49,13 @@
       color: $color-night
       border-radius: 5px
       border: 1px solid transparent
-    &-title, &-date
-      flex: 1
-      margin-right: 10px
-      &:last-child
-        margin-right: 0
-    &-text
-      width: 100%
-      flex: 1
-      resize: none
       margin-bottom: 10px
+      width: 300px
+    &-img
+      // width: 500px
+      border-radius: 5px
+      margin-bottom: 10px
+      text-align: center
     &-remove
       font-family: 'roboto', monospace
       font-size: 13px
@@ -72,9 +69,11 @@
       cursor: pointer
       @extend %flex-center
       transition: 0.3s
+      margin-top: auto
       &:hover
         background: darken($color-red, 10%)
-    
+
+
 .modal-enter
   opacity: 0
   // -webkit-transform: scale(1.1)

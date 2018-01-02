@@ -3,6 +3,7 @@
     .article__head(@click='showModal = true')
       .article__date {{article.date}}
       .article__title {{article.title}}
+    transition(name='modal')
     .article__modal-wrapper(v-if='showModal')
       .article__modal-overlay(@click='showModal = false')
       .article__modal-container
