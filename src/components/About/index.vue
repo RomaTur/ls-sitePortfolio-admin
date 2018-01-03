@@ -11,38 +11,44 @@
             @addSkill="addSkill"
             @changePercents='changePercents'
           )
-        pre {{skills}}
+        .input__submit(@click='submitChanges') Сохранить 
+        button(@click='showPre = !showPre' style='margin-top: 20px') Открыть/Закрыть массив
+        pre(v-if='showPre') {{skills}}
 </template>
 
 <script>
+
+import { mapActions, mapGetters, mapMutations } from 'vuex'
+
 export default {
   data: () => ({
     skillTypes: ['Frontend', 'Backend', 'Workflow'],
-    skills: []
+    showPre: false
   }),
-  created() {
-    fetch('/src/components/About/data.json')
-      .then(response => {
-        return response.json()
-      }, response => {
-        console.error(response)
-      })
-      .then(data => {
-        this.skills = data
-      })
-  },
   methods: {
+    ...mapActions('skills', ['fetchSkills']),
+    ...mapMutations('skills', ['addNewSkill', 'removeSavedSkill', 'changeSavedPercents']),
     removeSkill(skillId) {
-      this.skills = this.skills.filter(function(skills) { return skills.id !== skillId })
+      this.removeSavedSkill(skillId)
     },
     addSkill(newSkill) {
-      this.skills.push(newSkill)
+      this.addNewSkill(newSkill)
     },
     changePercents(newPercent, skillId) {
-      this.skills.forEach(skill => {
-        skill.percents = (skill.id === skillId) ? newPercent : skill.percents
+      this.changeSavedPercents({
+        new: newPercent,
+        id: skillId
       })
+    },
+    submitChanges() {
+      console.log('submitChanges')
     }
+  },
+  mounted() {
+    this.fetchSkills()
+  },
+  computed: {
+    ...mapGetters('skills', ['skills'])
   },
   components: {
     skillsList: require('./skills-list')

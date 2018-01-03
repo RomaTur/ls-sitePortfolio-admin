@@ -12,6 +12,12 @@ const skills = {
     },
     removeSavedSkill(state, skillId) {
       state.data = state.data.filter(skill => (skill.id !== skillId))
+    },
+    changeSavedPercents(state, newObj) {
+      state.data.forEach(skill => {
+        console.log(newObj)
+        skill.percents = (skill.id === newObj.id) ? newObj.new : skill.percents
+      })
     }
   },
   actions: {

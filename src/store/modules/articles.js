@@ -7,11 +7,22 @@ const posts = {
     articles: ({ data }) => (data)
   },
   mutations: {
-    addArticle(state, article) {
+    addNewArticle(state, article) {
       state.data.push(article)
+    },
+    removeSavedArticle(state, articleId) {
+      state.data = state.data.filter(article => { return article.id !== articleId })
     }
   },
   actions: {
+    fetchArticles({ state, rootGetters }) {
+      const { $http } = rootGetters
+      $http.get('Blog/data.json').then(response => {
+        state.data = response.body
+      }, response => {
+        console.error(response)
+      })
+    }
   }
 }
 

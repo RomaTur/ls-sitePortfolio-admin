@@ -6,12 +6,16 @@
       :work='work'
       @removeWork='removeWork'
       )
-    pre {{works}}
+    button(@click='showPre = !showPre' style='margin-top: 20px') Открыть/Закрыть массив
+    pre(v-if='showPre') {{works}}
       
 </template>
 
 <script>
 export default {
+  data: () => ({
+    showPre: false
+  }),
   props: {
     works: Array
   },

@@ -1,15 +1,15 @@
 <template lang="pug">
   .input__area
-    h3.title Добавить проект
-    input.input.title(
+    h3.title Добавить работу
+    input.input(
       v-model='title' 
-      placeholder="Название" 
+      placeholder="Название проекта" 
       :error="validation.hasError('title')"
       )
-    input.input.tech(v-model='tech' placeholder="Технологии")
-    input.input.href(v-model='href' placeholder="Ссылка")
-    .input__file
-      .input__file-logo pic
+    input.input(v-model='tech' placeholder="Технологии")
+    input.input(v-model='href' placeholder="Ссылка")
+    .input.input__file
+      .input__file-logo
       .input__file-text Загрузить Картинку
     button.input__add(@click='addWork') Добавить
 </template>

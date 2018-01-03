@@ -12,28 +12,24 @@
 </template>
 
 <script>
+import { mapActions, mapGetters, mapMutations } from 'vuex'
+
 export default {
-  data: () => ({
-    articles: []
-  }),
-  created() {
-    fetch('/src/components/Blog/data.json')
-      .then(response => {
-        return response.json()
-      }, response => {
-        console.error(response)
-      })
-      .then(data => {
-        this.articles = data
-      })
-  },
   methods: {
+    ...mapActions('articles', ['fetchArticles']),
+    ...mapMutations('articles', ['addNewArticle', 'removeSavedArticle']),
     addArticle(article) {
-      this.articles.push(article)
+      this.addNewArticle(article)
     },
     removeArticle(articleId) {
-      this.articles = this.articles.filter(article => { return article.id !== articleId })
+      this.removeSavedArticle(articleId)
     }
+  },
+  mounted() {
+    this.fetchArticles()
+  },
+  computed: {
+    ...mapGetters('articles', ['articles'])
   },
   components: {
     addArticle: require('./AddArticle'),

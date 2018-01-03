@@ -1,10 +1,23 @@
 .title
     font-family: 'roboto', monospace
-    font-size: 22px
-    font-weight: 600
+    font-size: 23px
+    font-weight: 500
     color: $color-night
-    padding: 30px
+    padding: 40px 0
 
 .skills__list
     display: flex
-
+.input__submit
+    padding: 12px 0
+    background: $color-aqua
+    width: 120px
+    border-radius: 5px
+    color: $color-white
+    font-family: 'roboto', monospace
+    font-size: 16px
+    font-weight: 400
+    cursor: pointer
+    transition: 0.3s
+    @extend %flex-center
+    &:hover
+        background: $color-aqua2

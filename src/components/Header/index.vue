@@ -1,5 +1,5 @@
 <template lang="pug">
-  header
+  header.header
     h1.title-text Панель администрирования
     a(href="").return-back Вернуться на сайт
 </template>

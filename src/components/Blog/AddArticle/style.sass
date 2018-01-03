@@ -1,37 +1,41 @@
 .title
   font-family: 'roboto', monospace
-  font-size: 18px
+  font-size: 16px
   font-weight: 400
   color: $color-night
+  margin-bottom: 14px
 
 .input
   &__area
-    padding: 30px
     display: flex
     flex-direction: column
   &__name,&__date,&__text
-    padding: 10px 15px
+    padding: 12px 15px
     font-family: 'roboto', monospace
     font-size: 16px
     font-weight: 400
     color: $color-night
     border-radius: 5px
     border: 1px solid transparent
-    margin: 10px 0
+    margin-bottom: 21px
+    transition: 0.3s
+    &:focus
+      border: 1px solid $color-aqua
   &__name,&__date
     width: 300px
   &__text
     width: 500px
     resize: none
-    height: 200px
+    height: 166px
+    margin-bottom: 30px
   &__add
     font-family: 'roboto', monospace
-    font-size: 18px
+    font-size: 16px
     font-weight: 400
     border-radius: 5px
     border: 1px solid transparent
-    width: 120px
-    height: 40px
+    width: 113px
+    height: 45px
     color: $color-white
     background: $color-aqua
     cursor: pointer

@@ -1,39 +1,55 @@
 .title
   font-family: 'roboto', monospace
-  font-size: 18px
+  font-size: 16px
   font-weight: 400
   color: $color-night
+  margin-bottom: 14px
 .input__area
   display: flex
   flex-direction: column
 
 .input
-  padding: 10px 15px
+  padding: 12px 15px
   font-family: 'roboto', monospace
   font-size: 16px
   font-weight: 400
   color: $color-night
   border-radius: 5px
   border: 1px solid transparent
-  margin: 10px 0
-.title
-  width: 200px
-.tech
+  margin-bottom: 21px
   width: 300px
-.href
-  width: 300px
-.input__add
-  font-family: 'roboto', monospace
-  font-size: 18px
-  font-weight: 400
-  border-radius: 5px
-  border: 1px solid transparent
-  width: 120px
-  height: 40px
-  color: $color-white
-  background: $color-aqua
-  cursor: pointer
   transition: 0.3s
-  &:hover
-    background: $color-aqua2
+  &:focus
+    border: 1px solid $color-aqua
+  &__file
+    margin-bottom: 60px
+    padding: 0
+    display: flex
+    width: 200px
+    cursor: pointer
+    &-logo
+      background: svg('~img/icons/image-pic.svg', '#fff') center center no-repeat;
+      width: 35px
+      height: 35px
+    &-text
+      font-family: 'roboto', monospace
+      font-size: 16px
+      font-weight: 400
+      color: $color-aqua
+      line-height: 1.82
+      margin-left: 10px
+  &__add
+    font-family: 'roboto', monospace
+    font-size: 16px
+    font-weight: 400
+    border-radius: 5px
+    border: 1px solid transparent
+    width: 113px
+    height: 45px
+    color: $color-white
+    background: $color-aqua
+    cursor: pointer
+    transition: 0.3s
+    &:hover
+      background: $color-aqua2
     

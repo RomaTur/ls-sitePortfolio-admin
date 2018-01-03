@@ -6,12 +6,16 @@
       :article='article'
       @removeArticle='removeArticle'
       )
-    pre {{articles}}
+    button(@click='showPre = !showPre' style='margin-top: 20px') Открыть/Закрыть массив
+    pre(v-if='showPre') {{articles}}
       
 </template>
 
 <script>
 export default {
+  data: () => ({
+    showPre: false
+  }),
   props: {
     articles: Array
   },

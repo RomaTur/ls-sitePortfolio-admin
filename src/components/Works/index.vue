@@ -9,32 +9,27 @@
         :works='works'
         @removeWork='removeWork'
       )
-    pre {{works}}
 </template>
 
 <script>
+import { mapActions, mapGetters, mapMutations } from 'vuex'
+
 export default {
-  data: () => ({
-    works: []
-  }),
-  created() {
-    fetch('/src/components/Works/data.json')
-      .then(response => {
-        return response.json()
-      }, response => {
-        console.error(response)
-      })
-      .then(data => {
-        this.works = data
-      })
-  },
   methods: {
+    ...mapActions('works', ['fetchWorks']),
+    ...mapMutations('works', ['addNewWork', 'removeSavedWork']),
     addWork(work) {
-      this.works.push(work)
+      this.addNewWork(work)
     },
     removeWork(workId) {
-      this.works = this.works.filter(work => { return work.id !== workId })
+      this.removeSavedWork(workId)
     }
+  },
+  mounted() {
+    this.fetchWorks()
+  },
+  computed: {
+    ...mapGetters('works', ['works'])
   },
   components: {
     addWork: require('./addWork'),
