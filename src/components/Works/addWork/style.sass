@@ -4,9 +4,15 @@
   font-weight: 400
   color: $color-night
   margin-bottom: 14px
+  @include phone
+    font-size: 14px
 .input__area
   display: flex
   flex-direction: column
+  @include tablet
+    margin-bottom: 60px
+  @include phone
+    margin-bottom: 30px
 
 .input
   padding: 12px 15px
@@ -21,12 +27,18 @@
   transition: 0.3s
   &:focus
     border: 1px solid $color-aqua
+  @include phone
+    font-size: 14px
+    padding: 14px 17px
+    width: 100%
   &__file
     margin-bottom: 60px
     padding: 0
     display: flex
     width: 200px
     cursor: pointer
+    @include tablet
+      margin-bottom: 28px
     &-logo
       background: svg('~img/icons/image-pic.svg', '#fff') center center no-repeat;
       width: 35px
@@ -52,4 +64,8 @@
     transition: 0.3s
     &:hover
       background: $color-aqua2
+    @include phone
+      width: 104px
+      height: 40px
+      font-size: 14px
     

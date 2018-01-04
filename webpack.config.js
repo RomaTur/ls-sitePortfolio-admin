@@ -57,10 +57,10 @@ module.exports = {
       ]
     },
     {
-      test: /\.(png|jpg|gif|woff|woff2|ico)$/,
+      test: /\.(png|jpeg|jpg|gif|woff|woff2|ico)$/,
       loader: 'file-loader',
       options: {
-        name: '[name].[ext]?[hash]'
+        name: '[name].[ext]'
       }
     },
     {

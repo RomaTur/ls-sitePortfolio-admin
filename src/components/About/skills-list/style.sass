@@ -6,11 +6,15 @@
         font-family: 'roboto', monospace
         font-size: 14px
         font-weight: 400
+        @include tablet
+            padding: 0 20px
     &__title
         font-weight: 500
         font-size: 16px
         color: $color-night
         margin-bottom: 10px
+        @include phone
+            font-size: 14px
     &__add
         padding: 20px
         display: flex
@@ -20,6 +24,8 @@
         font-size: 16px
         font-weight: 500
         color: $color-night
+        @include tablet
+            padding: 10 20px
 
 .add
     &__name

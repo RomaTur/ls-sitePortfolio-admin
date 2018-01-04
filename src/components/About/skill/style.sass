@@ -9,6 +9,9 @@
         font-size: 16px
         font-weight: 500
         color: $color-night
+        @include phone
+            font-size: 14px
+            padding: 8px 0
     &__name
         flex: 1 1 auto
     &__input
@@ -24,6 +27,8 @@
         transition: 0.3s
         &:focus
             border: 1px solid $color-aqua
+        @include phone
+            font-size: 11px
     &__remove
         cursor: pointer
         position: absolute

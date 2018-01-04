@@ -1,5 +1,5 @@
 <template lang="pug">
-  .articles
+  .articles__area
     Article(
       v-for='(article, index) in articles'
       :key='index'

@@ -9,6 +9,8 @@
   &__area
     display: flex
     flex-direction: column
+    @include tablet
+      margin-bottom: 30px
   &__name,&__date,&__text
     padding: 12px 15px
     font-family: 'roboto', monospace
@@ -21,6 +23,9 @@
     transition: 0.3s
     &:focus
       border: 1px solid $color-aqua
+    @include phone
+      font-size: 14px
+      padding: 13px 17px
   &__name,&__date
     width: 300px
   &__text
@@ -28,6 +33,14 @@
     resize: none
     height: 166px
     margin-bottom: 30px
+    @include tablet
+      height: 300px
+      max-width: 100%
+    @include phone
+      height: 247px
+  &__name,&__date,&__text
+    @include phone
+      width: 100%
   &__add
     font-family: 'roboto', monospace
     font-size: 16px
@@ -42,4 +55,8 @@
     transition: 0.3s
     &:hover
       background: $color-aqua2
+    @include phone
+      width: 104px
+      height: 40px
+      font-size: 14px
     

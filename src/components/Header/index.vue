@@ -1,12 +1,14 @@
 <template lang="pug">
   header.header
     h1.title-text Панель администрирования
-    a(href="").return-back Вернуться на сайт
+    a(:href="href").return-back Вернуться на сайт
 </template>
 
 <script>
 export default {
-
+  data: () => ({
+    href: 'http://romatur.xyz'
+  })
 }
 </script>
 
