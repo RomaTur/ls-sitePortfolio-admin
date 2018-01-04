@@ -3,12 +3,12 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: {
-    entry: './src/main.js',
-    styles: './src/styles/main.js'
+    entry: './src/admin/main.js',
+    styles: './src/admin/styles/main.js'
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, './admin/dist'),
+    publicPath: '/admin/dist/',
     filename: '[name].bundle.js'
   },
   module: {
@@ -27,9 +27,9 @@ module.exports = {
                 loader: 'sass-resources-loader',
                 options: {
                   resources: [
-                    './src/styles/config/variables.sass',
-                    './src/styles/config/extend.sass',
-                    './src/styles/config/mixins.sass'
+                    './src/admin/styles/config/variables.sass',
+                    './src/admin/styles/config/extend.sass',
+                    './src/admin/styles/config/mixins.sass'
                   ]
                 }
               }
@@ -76,13 +76,13 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'img': path.resolve(__dirname, 'src/assets/img'),
-      'fonts': path.resolve(__dirname, 'src/assets/fonts')
+      'img': path.resolve(__dirname, 'src/admin/assets/img'),
+      'fonts': path.resolve(__dirname, 'src/admin/assets/fonts')
     },
     extensions: ['.js', '.vue'],
     modules: [
       'node_modules',
-      path.resolve(__dirname, 'src/components')
+      path.resolve(__dirname, 'src/admin/components')
     ]
   },
   devServer: {

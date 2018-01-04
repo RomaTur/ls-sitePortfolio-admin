@@ -4,7 +4,7 @@ import VueResource from 'vue-resource'
 
 Vue.use(Vuex)
 Vue.use(VueResource)
-Vue.http.options.root = '/src/components'
+Vue.http.options.root = '/src/admin/components'
 
 import skills from './modules/skills'
 import articles from './modules/articles'
