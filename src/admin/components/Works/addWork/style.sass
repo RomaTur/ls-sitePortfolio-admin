@@ -32,13 +32,15 @@
     padding: 14px 17px
     width: 100%
   &__file
-    margin-bottom: 60px
+    margin-bottom: 30px
     padding: 0
     display: flex
     width: 200px
     cursor: pointer
     @include tablet
       margin-bottom: 28px
+    @include phone
+      margin: 0 auto 30px auto
     &-logo
       background: svg('~img/icons/image-pic.svg', '#fff') center center no-repeat;
       width: 35px
@@ -68,4 +70,21 @@
       width: 104px
       height: 40px
       font-size: 14px
-    
+      margin: 0 auto 30px auto
+
+#files
+  position: absolute
+  left: -9999px
+
+#list
+  width: 300px
+  border: 1px solid $color-aqua
+  padding: 5px
+  border-radius: 5px
+  overflow: hidden
+  background: $color-white
+  margin: 10px 5px 0 0
+  text-align: center
+  margin-bottom: 30px
+  @include phone
+    width: 100%
