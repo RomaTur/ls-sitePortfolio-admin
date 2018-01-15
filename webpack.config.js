@@ -3,8 +3,8 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: {
-    entry: './src/admin/main.js',
-    styles: './src/admin/styles/main.js'
+    entry: './src/main.js',
+    styles: './src/styles/main.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -27,9 +27,9 @@ module.exports = {
                 loader: 'sass-resources-loader',
                 options: {
                   resources: [
-                    './src/admin/styles/config/variables.sass',
-                    './src/admin/styles/config/extend.sass',
-                    './src/admin/styles/config/mixins.sass'
+                    './src/styles/config/variables.sass',
+                    './src/styles/config/extend.sass',
+                    './src/styles/config/mixins.sass'
                   ]
                 }
               }
@@ -76,13 +76,13 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'img': path.resolve(__dirname, 'src/admin/assets/img'),
-      'fonts': path.resolve(__dirname, 'src/admin/assets/fonts')
+      'img': path.resolve(__dirname, 'src/assets/img'),
+      'fonts': path.resolve(__dirname, 'src/assets/fonts')
     },
     extensions: ['.js', '.vue'],
     modules: [
       'node_modules',
-      path.resolve(__dirname, 'src/admin/components')
+      path.resolve(__dirname, 'src/components')
     ]
   },
   devServer: {
