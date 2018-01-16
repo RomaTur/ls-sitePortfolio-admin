@@ -21,7 +21,7 @@ git clone https://github.com/RomaTur/ls-sitePortfolio-admin.git
 
 Перейдите в папку и скачайте зависимости
 ``` bash
-cd ls-sitePortfolio
+cd ls-sitePortfolio-admin
 npm i
 ```
 
